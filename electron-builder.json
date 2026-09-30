@@ -4,7 +4,7 @@
         "dist-react",
         "dist-electron"
     ],
-    "icon": "./logo.svg",
+    "icon": "./logo.png",
     "mac": {
         "target": "dmg"
     },
