@@ -1,0 +1,21 @@
+{
+    "appId": "com.rarnak-pariyar.electron-learning",
+    "files": [
+        "dist-react",
+        "dist-electron"
+    ],
+    "icon": "./logo.svg",
+    "mac": {
+        "target": "dmg"
+    },
+    "linux": {
+        "target": "AppImage",
+        "category": "Utility"
+    },
+    "win": {
+        "target": [
+            "portable",
+            "msi"
+        ]
+    }
+}
