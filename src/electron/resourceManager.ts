@@ -8,8 +8,20 @@ export function pullResources() {
         const cpuUsage = await getCpuUsage()
         const ramUsage = getRamUsage()
         const storageData = getStorageData()
-        console.log({ cpuUsage, ramUsage, storageUsage : storageData.usage })
+        console.log({ cpuUsage, ramUsage, storageUsage: storageData.usage })
     }, POLLING_INTERVAL);
+}
+
+export function staticData() {
+    const totalStorage = getStorageData().total
+    const cpuModel = os.cpus()[0].model
+    const totalMemory = Math.floor(osUtils.totalmem() / 1024)
+
+    return {
+        totalStorage,
+        cpuModel,
+        totalMemory,
+    }
 }
 
 function getCpuUsage() {
@@ -29,6 +41,6 @@ function getStorageData() {
 
     return {
         total: Math.floor(total / 1_000_000_000),
-        usage: 1 - free/total,
+        usage: 1 - free / total,
     }
 }
